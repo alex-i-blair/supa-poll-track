@@ -1,5 +1,5 @@
 // import functions and grab DOM elements
-
+import { redirectToPolls, signUpUser, loginUser } from './fetch-utils.js';
 // let state
 
 // set event listeners 
