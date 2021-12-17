@@ -6,26 +6,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./styles/reset.css">
+    <link rel="stylesheet" href="../styles/reset.css">
     <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
-    <link rel="stylesheet" href="./styles/style.css">
-    <link rel="stylesheet" href="./styles/home.css">
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/home.css">
     <title>Document</title>
 </head>
 
 <body>
     <header>
         <div class="gutter-right logo">
-            <img src="./assets/big-logo.png" />
+            <img src="../assets/big-logo.png" />
         </div>
+        <button id="logout">Logout</button>
     </header>
     <main>
+        <section id="current-poll-container">
+            <h2 id="question">Poll Question</h2>
+            <div class="poll-option-1">
+                <h4 id="option-1">Option 1</h4>
+                <h4 id="count-1">Votes</h4>
+                <button id="vote-1">Option 1</button>
+            </div>
+            <div>
+                <h4 id="option-2">Option 2</h4>
+                <h4 id="count-2">Votes</h4>
+                <button id="vote-2">Option 2</button>
+            </div>
+            <button id="finish-poll">Finish Poll</button>
+        </section>
+        <form id="poll-form">
+            <label>Poll Question
+                <input name="question">
+            </label>
+            <label>Option 1
+                <input name="option-1">
+            </label>
+                <label>Option 2
+                    <input name="option-2">
+            </label>
+            <button>Submit</button>
+        </form>
+        <div class="past-polls" id="past-polls">
+            
+        </div>
     </main>
     <footer>
         <div class="copy gutter-right">&copy; 2021 Alchemy Code Lab</div>
     </footer>
 
-    <script type="module" src="./app.js"></script>
+    <script type="module" src="./polls.js"></script>
 </body>
 
 </html>
