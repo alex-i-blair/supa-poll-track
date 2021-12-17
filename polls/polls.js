@@ -18,6 +18,7 @@ const count2El = document.getElementById('count-2');
 
 const vote1Button = document.getElementById('vote-1');
 const vote2Button = document.getElementById('vote-2');
+const logoutButton = document.getElementById('logout');
 
 const pollForm = document.getElementById('poll-form');
 const finishPollButton = document.getElementById('finish-poll');
@@ -29,6 +30,10 @@ let option1 = '';
 let option2 = '';
 let count1 = 0;
 let count2 = 0;
+
+window.addEventListener('load', async()=> {
+    displayPolls();
+});
 
 pollForm.addEventListener('submit', (event) => {
     event.preventDefault();
@@ -54,11 +59,11 @@ vote2Button.addEventListener('click', async()=> {
 
 finishPollButton.addEventListener('click', async()=> {
     const poll = {
-        question,
-        option1,
-        option2,
-        count1,
-        count2,
+        question: question,
+        option1: option1,
+        option2: option2,
+        votes1: count1,
+        votes2: count2,
     };
     await createPoll(poll);
 
@@ -71,6 +76,10 @@ finishPollButton.addEventListener('click', async()=> {
     count2 = 'Votes';
 
     displayCurrentPollEl();
+});
+
+logoutButton.addEventListener('click', ()=> {
+    logout();
 });
 
 async function displayPolls() {
