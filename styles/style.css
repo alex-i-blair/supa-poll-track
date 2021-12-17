@@ -108,3 +108,17 @@ footer {
     width: 100%;
     flex-direction: row;
 }
+
+input {
+    margin: .5rem;
+}
+h4 {
+    margin: 3px auto;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-content: center;
+}
